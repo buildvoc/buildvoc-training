@@ -1,6 +1,7 @@
 .PHONY: usage
 
-tag=buildvoc/annif:latest
+name=buildvoc-training
+tag=latest
 
 usage:
 	@echo Usage
@@ -9,8 +10,8 @@ usage:
 	@echo make run - execute our build
 
 build:
-	docker build -t $(tag) .
+	docker build -t $(name):$(tag) .
 
 run:
-	docker run --name buildvoc-annif --rm -ti $(tag)
+	docker run --name $(name) --rm -ti $(name):$(tag)
 
