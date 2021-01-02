@@ -1,0 +1,11 @@
+version: "2"
+services:
+  buildvoc-training:
+    container_name: buildvoc-training
+    image: quay.io/buildvoc/buildvoc-training
+    ports:
+      - "8086:8086"
+    volumes:
+      - /root/buildvoc-training/annif-projects:/annif-projects
+    restart: always
+
